@@ -18,18 +18,12 @@ const bugRemoved = (objID) => {
   };
 };
 
-const bugResolved = (state, objID) => {
-  state.filter((bug) => {
-    if (bug.id === objID) {
-      bug.resolved = true;
-    }
-  });
+const bugResolved = (objID) => {
   return {
-    type: actions.REMOVE_BUG,
+    type: actions.RESOLVE_BUG,
     payload: {
       id: objID,
-      resolved: true,
     },
   };
 };
-export { bugAdded, bugRemoved };
+export { bugAdded, bugRemoved, bugResolved };
